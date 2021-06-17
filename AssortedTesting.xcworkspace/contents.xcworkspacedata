@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SystemExtensions/SystemExtensions.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SystemTools/SystemTools.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PureUI/PureUI.xcodeproj">
    </FileRef>
    <FileRef

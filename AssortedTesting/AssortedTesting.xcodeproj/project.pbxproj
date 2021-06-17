@@ -14,6 +14,11 @@
 		7EF8E2D8267BC92000DB1566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF8E2D6267BC92000DB1566 /* LaunchScreen.storyboard */; };
 		7EF8E2FC267BD50E00DB1566 /* PureUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E2FB267BD50E00DB1566 /* PureUI.framework */; };
 		7EF8E2FD267BD50E00DB1566 /* PureUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E2FB267BD50E00DB1566 /* PureUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EF8E315267BD8F900DB1566 /* SystemTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E314267BD8F900DB1566 /* SystemTools.framework */; };
+		7EF8E316267BD8F900DB1566 /* SystemTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E314267BD8F900DB1566 /* SystemTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EF8E31B267BDA2A00DB1566 /* VolumeListenerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E31A267BDA2A00DB1566 /* VolumeListenerTestViewController.swift */; };
+		7EF8E334267BF86600DB1566 /* SystemExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E333267BF86600DB1566 /* SystemExtensions.framework */; };
+		7EF8E335267BF86600DB1566 /* SystemExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF8E333267BF86600DB1566 /* SystemExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +28,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7EF8E335267BF86600DB1566 /* SystemExtensions.framework in Embed Frameworks */,
 				7EF8E2FD267BD50E00DB1566 /* PureUI.framework in Embed Frameworks */,
+				7EF8E316267BD8F900DB1566 /* SystemTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,6 +46,9 @@
 		7EF8E2D7267BC92000DB1566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EF8E2D9267BC92000DB1566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF8E2FB267BD50E00DB1566 /* PureUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PureUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF8E314267BD8F900DB1566 /* SystemTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SystemTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF8E31A267BDA2A00DB1566 /* VolumeListenerTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeListenerTestViewController.swift; sourceTree = "<group>"; };
+		7EF8E333267BF86600DB1566 /* SystemExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SystemExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF8E334267BF86600DB1566 /* SystemExtensions.framework in Frameworks */,
 				7EF8E2FC267BD50E00DB1566 /* PureUI.framework in Frameworks */,
+				7EF8E315267BD8F900DB1566 /* SystemTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,7 @@
 				7EF8E2CD267BC91D00DB1566 /* SceneDelegate.swift */,
 				7EF8E2CF267BC91D00DB1566 /* ViewController.swift */,
 				7EF8E2D4267BC92000DB1566 /* Assets.xcassets */,
+				7EF8E319267BDA1200DB1566 /* TestViewControllers */,
 				7EF8E2D6267BC92000DB1566 /* LaunchScreen.storyboard */,
 				7EF8E2D9267BC92000DB1566 /* Info.plist */,
 			);
@@ -87,8 +100,18 @@
 			isa = PBXGroup;
 			children = (
 				7EF8E2FB267BD50E00DB1566 /* PureUI.framework */,
+				7EF8E314267BD8F900DB1566 /* SystemTools.framework */,
+				7EF8E333267BF86600DB1566 /* SystemExtensions.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7EF8E319267BDA1200DB1566 /* TestViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7EF8E31A267BDA2A00DB1566 /* VolumeListenerTestViewController.swift */,
+			);
+			path = TestViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF8E2D0267BC91D00DB1566 /* ViewController.swift in Sources */,
+				7EF8E31B267BDA2A00DB1566 /* VolumeListenerTestViewController.swift in Sources */,
 				7EF8E2CC267BC91D00DB1566 /* AppDelegate.swift in Sources */,
 				7EF8E2CE267BC91D00DB1566 /* SceneDelegate.swift in Sources */,
 			);

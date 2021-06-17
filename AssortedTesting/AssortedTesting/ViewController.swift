@@ -11,14 +11,19 @@ import PureUI
 class ViewController: UIViewController {
   
   lazy var webButton: UIButton = {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
+    let button = TestButton()
     button.setTitle("WebView", for: .normal)
-    button.backgroundColor = .lightGray
-    button.layer.cornerRadius = 8
-    button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
     button.addTarget(self,
                      action: #selector(didTapWebButton),
+                     for: .touchUpInside)
+    return button
+  }()
+  
+  lazy var volumeListenerButton: UIButton = {
+    let button = TestButton()
+    button.setTitle("VolumeListener", for: .normal)
+    button.addTarget(self,
+                     action: #selector(didTapVolumeListenerButton),
                      for: .touchUpInside)
     return button
   }()
@@ -33,6 +38,12 @@ class ViewController: UIViewController {
       webButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       webButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
     ])
+    
+    view.addSubview(volumeListenerButton)
+    NSLayoutConstraint.activate([
+      volumeListenerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      volumeListenerButton.topAnchor.constraint(equalTo: webButton.bottomAnchor, constant: 16),
+    ])
   }
 
   @objc
@@ -40,6 +51,13 @@ class ViewController: UIViewController {
     let apple = URL(string: "https://www.apple.com")!
     let webVC = WebViewController(url: apple)
     let navController = UINavigationController(rootViewController: webVC)
+    present(navController, animated: true)
+  }
+  
+  @objc
+  func didTapVolumeListenerButton() {
+    let listenerVC = VolumeListenerTestViewController()
+    let navController = UINavigationController(rootViewController: listenerVC)
     present(navController, animated: true)
   }
 }
