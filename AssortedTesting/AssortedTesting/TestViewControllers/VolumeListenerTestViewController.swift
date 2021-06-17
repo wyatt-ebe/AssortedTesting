@@ -51,6 +51,11 @@ class VolumeListenerTestViewController: UIViewController {
     return view
   }()
   
+  // Great to confirm no memory leaks
+  deinit {
+    print("deinit \(type(of: self))")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     

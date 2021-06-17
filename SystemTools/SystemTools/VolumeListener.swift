@@ -33,7 +33,9 @@ public class VolumeListener {
     NotificationCenter.default
       .publisher(for: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"))
       .compactMap { $0.userInfo }
-      .sink(receiveValue: { (val) in
+      .sink(receiveValue: { [weak self] (val) in
+        guard let self = self else { return }
+        
         // Only respond if the containing view is still presented on screen, and the input change reason was user input.
         guard
           self.volumeView.superview?.window != nil,
@@ -43,6 +45,11 @@ public class VolumeListener {
         self.delegate?.volumeChanged()
       })
       .store(in: &cancellables)
+  }
+  
+  // Great to confirm no memory leaks
+  deinit {
+    print("deinit \(type(of: self))")
   }
   
   // Theoreticly, this resets the volume when it being "eaten" by the camera. However, the behavior starts to get weird the navigation stack is considered. For example, if the volume is raised after the view is used, then the view is returned to, the volume would be reset to whatever it was when the view FIRST loaded. Would replace the delgate call above.
