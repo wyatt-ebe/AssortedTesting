@@ -62,11 +62,11 @@ extension BluetoothManager: CBCentralManagerDelegate {
   public func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
     // Would otherwise repeatedly discover certain BLE devices
     guard !discoveredUUIDs.contains(peripheral.identifier) else { return }
+    discoveredUUIDs.insert(peripheral.identifier)
     
     // Only required to print out all the services for connectible peripherals, would nominally not be needed if we had searched by known CBUUID.
-    discoveredUUIDs.insert(peripheral.identifier)
     discoveredPeripherals.insert(peripheral)
-    central.connect(peripheral)
+    central.connect(peripheral)'
 
     delegate?.didDiscoverDevice(name: peripheral.name)
   }
@@ -74,6 +74,8 @@ extension BluetoothManager: CBCentralManagerDelegate {
   public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
     print("Connected to \(peripheral.name ?? "nil name")")
     peripheral.delegate = self
+    
+    // Used to print out all services for testing. If only connection is required, say for data exchange, this is not needed.
     peripheral.discoverServices(nil)
   }
   
