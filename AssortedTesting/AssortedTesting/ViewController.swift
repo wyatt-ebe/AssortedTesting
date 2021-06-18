@@ -27,6 +27,15 @@ class ViewController: UIViewController {
                      for: .touchUpInside)
     return button
   }()
+  
+  lazy var bluetoothManagerButton: UIButton = {
+    let button = TestButton()
+    button.setTitle("BluetoothManager", for: .normal)
+    button.addTarget(self,
+                     action: #selector(didTapBluetoothManagerButton),
+                     for: .touchUpInside)
+    return button
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,6 +53,12 @@ class ViewController: UIViewController {
       volumeListenerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       volumeListenerButton.topAnchor.constraint(equalTo: webButton.bottomAnchor, constant: 16),
     ])
+    
+    view.addSubview(bluetoothManagerButton)
+    NSLayoutConstraint.activate([
+      bluetoothManagerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      bluetoothManagerButton.topAnchor.constraint(equalTo: volumeListenerButton.bottomAnchor, constant: 16),
+    ])
   }
 
   @objc
@@ -58,6 +73,13 @@ class ViewController: UIViewController {
   func didTapVolumeListenerButton() {
     let listenerVC = VolumeListenerTestViewController()
     let navController = UINavigationController(rootViewController: listenerVC)
+    present(navController, animated: true)
+  }
+  
+  @objc
+  func didTapBluetoothManagerButton() {
+    let bluetoothVC = BluetoothManagerTestViewController()
+    let navController = UINavigationController(rootViewController: bluetoothVC)
     present(navController, animated: true)
   }
 }

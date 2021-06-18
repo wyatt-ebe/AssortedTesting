@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7EF8E30E267BD8ED00DB1566 /* SystemTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF8E30C267BD8ED00DB1566 /* SystemTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EF8E318267BD9B200DB1566 /* VolumeListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E317267BD9B200DB1566 /* VolumeListener.swift */; };
+		7EF8E36C267C0ADC00DB1566 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E36B267C0ADC00DB1566 /* BluetoothManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		7EF8E30C267BD8ED00DB1566 /* SystemTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemTools.h; sourceTree = "<group>"; };
 		7EF8E30D267BD8ED00DB1566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF8E317267BD9B200DB1566 /* VolumeListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeListener.swift; sourceTree = "<group>"; };
+		7EF8E36B267C0ADC00DB1566 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				7EF8E30C267BD8ED00DB1566 /* SystemTools.h */,
 				7EF8E317267BD9B200DB1566 /* VolumeListener.swift */,
+				7EF8E36B267C0ADC00DB1566 /* BluetoothManager.swift */,
 				7EF8E30D267BD8ED00DB1566 /* Info.plist */,
 			);
 			path = SystemTools;
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF8E36C267C0ADC00DB1566 /* BluetoothManager.swift in Sources */,
 				7EF8E318267BD9B200DB1566 /* VolumeListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
