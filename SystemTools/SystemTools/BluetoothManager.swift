@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreBluetooth
+import AVFAudio
 
 public protocol BluetoothManagerDelegate: AnyObject {
   func didDiscoverDevice(name peripheralName: String?)
@@ -66,7 +67,7 @@ extension BluetoothManager: CBCentralManagerDelegate {
     
     // Only required to print out all the services for connectible peripherals, would nominally not be needed if we had searched by known CBUUID.
     discoveredPeripherals.insert(peripheral)
-    central.connect(peripheral)'
+    central.connect(peripheral)
 
     delegate?.didDiscoverDevice(name: peripheral.name)
   }

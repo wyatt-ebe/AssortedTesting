@@ -36,13 +36,18 @@ public class VolumeListener {
       .sink(receiveValue: { [weak self] (val) in
         guard let self = self else { return }
         
-        // Only respond if the containing view is still presented on screen, and the input change reason was user input.
-        guard
-          self.volumeView.superview?.window != nil,
-          let reason = val["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String,
-          reason == "ExplicitVolumeChange"
-        else { return }
-        self.delegate?.volumeChanged()
+        // Only respond if the containing view is still presented on screen.
+        guard self.volumeView.superview?.window != nil else { return }
+        
+        // Ensure this is not a continous input (press & hold), and that it is a user input.
+        if self.isShutterInputAllowed,
+           let reason = val["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String,
+           reason == "ExplicitVolumeChange" {
+          self.delegate?.volumeChanged()
+        }
+      
+        // Reset access even if no action taken, to prevent press and hold toggling.
+        self.blockAccess()
       })
       .store(in: &cancellables)
   }
@@ -60,6 +65,35 @@ public class VolumeListener {
         slider?.value = self.initialVolume
         self.delegate?.volumeChanged()
       }
+    }
+  }
+  
+  var timerTenthSeconds: Int = 0 // block time in ms
+  var timer: Timer?
+  
+  var isShutterInputAllowed: Bool {
+    return timerTenthSeconds == 0
+  }
+  
+  func blockAccess() {
+    let blockTenthSeconds = 4
+    timerTenthSeconds = blockTenthSeconds
+    if timer == nil {
+      timer = Timer.scheduledTimer(timeInterval: 0.1,
+                                   target: self,
+                                   selector: #selector(timerFire),
+                                   userInfo: nil,
+                                   repeats: true)
+    }
+  }
+  
+  @objc
+  func timerFire() {
+    guard timerTenthSeconds > 0 else { return }
+    timerTenthSeconds -= 1
+    if timerTenthSeconds == 0 {
+      timer?.invalidate()
+      timer = nil
     }
   }
 }
