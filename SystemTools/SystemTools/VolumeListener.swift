@@ -25,6 +25,18 @@ public class VolumeListener {
   /// Responds to volume changes
   public weak var delegate: VolumeListenerDelegate?
   
+  // Remaining block time in 0.1s
+  var timerTenthSeconds: Int = 0
+  
+  // Repeating timer that decrements the timerTenthSeconds
+  var timer: Timer?
+  
+  // Convenience check against timer
+  var isShutterInputAllowed: Bool {
+    return timerTenthSeconds == 0
+  }
+  
+  // Volume for unused functionality that resets input volume after event ends to "eat" the input.
   let initialVolume: Float
   
   // Sets up a Combine publisher that is listening to the volume change controller that is triggered by adding MPVolumeView to an active view.
@@ -57,24 +69,7 @@ public class VolumeListener {
     print("deinit \(type(of: self))")
   }
   
-  // Theoreticly, this resets the volume when it being "eaten" by the camera. However, the behavior starts to get weird the navigation stack is considered. For example, if the volume is raised after the view is used, then the view is returned to, the volume would be reset to whatever it was when the view FIRST loaded. Would replace the delgate call above.
-  func resetVolume(_ action: @escaping () -> Void) {
-    let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05) {
-      if slider?.value != self.initialVolume {
-        slider?.value = self.initialVolume
-        self.delegate?.volumeChanged()
-      }
-    }
-  }
-  
-  var timerTenthSeconds: Int = 0 // block time in ms
-  var timer: Timer?
-  
-  var isShutterInputAllowed: Bool {
-    return timerTenthSeconds == 0
-  }
-  
+  // Reset the block timer and create the timer if required
   func blockAccess() {
     let blockTenthSeconds = 4
     timerTenthSeconds = blockTenthSeconds
@@ -87,13 +82,26 @@ public class VolumeListener {
     }
   }
   
+  // Upon timer interval fire, decrement remaining count and remove timer if done.
   @objc
   func timerFire() {
+//    print("time left:", timerTenthSeconds)
     guard timerTenthSeconds > 0 else { return }
     timerTenthSeconds -= 1
     if timerTenthSeconds == 0 {
       timer?.invalidate()
       timer = nil
+    }
+  }
+  
+  // Theoreticly, this resets the volume when it being "eaten" by the camera. However, the behavior starts to get weird the navigation stack is considered. For example, if the volume is raised after the view is used, then the view is returned to, the volume would be reset to whatever it was when the view FIRST loaded. Would replace the delgate call above.
+  func resetVolume(_ action: @escaping () -> Void) {
+    let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05) {
+      if slider?.value != self.initialVolume {
+        slider?.value = self.initialVolume
+        self.delegate?.volumeChanged()
+      }
     }
   }
 }
