@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E849CFB26853C76009EF220 /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E849CFA26853C76009EF220 /* CardCollectionViewController.swift */; };
+		7E849D0126854268009EF220 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E849D0026854268009EF220 /* GradientView.swift */; };
 		7EF8E2EE267BCB9000DB1566 /* PureUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF8E2EC267BCB9000DB1566 /* PureUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EF8E2F9267BCD7400DB1566 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E2F8267BCD7400DB1566 /* WebViewController.swift */; };
 		7EF8E31D267BF6D200DB1566 /* TestButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E31C267BF6D200DB1566 /* TestButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E849CFA26853C76009EF220 /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
+		7E849D0026854268009EF220 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7EF8E2E9267BCB9000DB1566 /* PureUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF8E2EC267BCB9000DB1566 /* PureUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PureUI.h; sourceTree = "<group>"; };
 		7EF8E2ED267BCB9000DB1566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,7 +55,9 @@
 			isa = PBXGroup;
 			children = (
 				7EF8E2EC267BCB9000DB1566 /* PureUI.h */,
+				7E849D0026854268009EF220 /* GradientView.swift */,
 				7EF8E2F8267BCD7400DB1566 /* WebViewController.swift */,
+				7E849CFA26853C76009EF220 /* CardCollectionViewController.swift */,
 				7EF8E31C267BF6D200DB1566 /* TestButton.swift */,
 				7EF8E2ED267BCB9000DB1566 /* Info.plist */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E849CFB26853C76009EF220 /* CardCollectionViewController.swift in Sources */,
 				7EF8E2F9267BCD7400DB1566 /* WebViewController.swift in Sources */,
+				7E849D0126854268009EF220 /* GradientView.swift in Sources */,
 				7EF8E31D267BF6D200DB1566 /* TestButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

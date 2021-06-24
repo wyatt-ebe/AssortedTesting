@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E849CFD26853D4B009EF220 /* UIFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E849CFC26853D4B009EF220 /* UIFontExt.swift */; };
 		7EF8E32D267BF85D00DB1566 /* SystemExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EF8E337267BF87700DB1566 /* NSAttributedStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E336267BF87700DB1566 /* NSAttributedStringExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E849CFC26853D4B009EF220 /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
 		7EF8E328267BF85D00DB1566 /* SystemExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SystemExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemExtensions.h; sourceTree = "<group>"; };
 		7EF8E32C267BF85D00DB1566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			children = (
 				7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */,
 				7EF8E336267BF87700DB1566 /* NSAttributedStringExt.swift */,
+				7E849CFC26853D4B009EF220 /* UIFontExt.swift */,
 				7EF8E32C267BF85D00DB1566 /* Info.plist */,
 			);
 			path = SystemExtensions;
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E849CFD26853D4B009EF220 /* UIFontExt.swift in Sources */,
 				7EF8E337267BF87700DB1566 /* NSAttributedStringExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.YY.SystemExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,6 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.YY.SystemExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

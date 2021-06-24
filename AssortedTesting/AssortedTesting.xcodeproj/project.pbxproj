@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EE59E49268545E900EE9F9B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 7EE59E48268545E900EE9F9B /* Fonts */; };
+		7EE59E4B268546EB00EE9F9B /* CardCollectionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE59E4A268546EB00EE9F9B /* CardCollectionTestViewController.swift */; };
 		7EF8E2CC267BC91D00DB1566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E2CB267BC91D00DB1566 /* AppDelegate.swift */; };
 		7EF8E2CE267BC91D00DB1566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E2CD267BC91D00DB1566 /* SceneDelegate.swift */; };
 		7EF8E2D0267BC91D00DB1566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E2CF267BC91D00DB1566 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7EE59E48268545E900EE9F9B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		7EE59E4A268546EB00EE9F9B /* CardCollectionTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionTestViewController.swift; sourceTree = "<group>"; };
 		7EF8E2C8267BC91D00DB1566 /* AssortedTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssortedTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF8E2CB267BC91D00DB1566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF8E2CD267BC91D00DB1566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				7EF8E319267BDA1200DB1566 /* TestViewControllers */,
 				7EF8E2D6267BC92000DB1566 /* LaunchScreen.storyboard */,
 				7EF8E2D9267BC92000DB1566 /* Info.plist */,
+				7EE59E48268545E900EE9F9B /* Fonts */,
 			);
 			path = AssortedTesting;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 			children = (
 				7EF8E31A267BDA2A00DB1566 /* VolumeListenerTestViewController.swift */,
 				7EF8E36D267C0CE800DB1566 /* BluetoothManagerTestViewController.swift */,
+				7EE59E4A268546EB00EE9F9B /* CardCollectionTestViewController.swift */,
 			);
 			path = TestViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE59E49268545E900EE9F9B /* Fonts in Resources */,
 				7EF8E2D8267BC92000DB1566 /* LaunchScreen.storyboard in Resources */,
 				7EF8E2D5267BC92000DB1566 /* Assets.xcassets in Resources */,
 			);
@@ -189,6 +196,7 @@
 			files = (
 				7EF8E36E267C0CE800DB1566 /* BluetoothManagerTestViewController.swift in Sources */,
 				7EF8E2D0267BC91D00DB1566 /* ViewController.swift in Sources */,
+				7EE59E4B268546EB00EE9F9B /* CardCollectionTestViewController.swift in Sources */,
 				7EF8E31B267BDA2A00DB1566 /* VolumeListenerTestViewController.swift in Sources */,
 				7EF8E2CC267BC91D00DB1566 /* AppDelegate.swift in Sources */,
 				7EF8E2CE267BC91D00DB1566 /* SceneDelegate.swift in Sources */,
@@ -330,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4G4759G3P;
 				INFOPLIST_FILE = AssortedTesting/Info.plist;
@@ -339,6 +348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.YY.AssortedTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,6 +359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4G4759G3P;
 				INFOPLIST_FILE = AssortedTesting/Info.plist;
@@ -358,6 +369,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.YY.AssortedTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

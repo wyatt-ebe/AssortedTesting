@@ -8,7 +8,7 @@
 import UIKit
 
 public extension NSAttributedString {
-  // Returns an attributed string with the given text, font, color, and line spacing.
+  // Returns an attributed string with the given text, font, color, line spacing, kerning (character spacing), and alignment.
   convenience init(string: String,
                    font: UIFont,
                    color: UIColor,

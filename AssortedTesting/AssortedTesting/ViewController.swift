@@ -36,6 +36,15 @@ class ViewController: UIViewController {
                      for: .touchUpInside)
     return button
   }()
+  
+  lazy var cardCollectionButton: UIButton = {
+    let button = TestButton()
+    button.setTitle("CardCollection", for: .normal)
+    button.addTarget(self,
+                     action: #selector(didTapCardCollectionButton),
+                     for: .touchUpInside)
+    return button
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -59,6 +68,12 @@ class ViewController: UIViewController {
       bluetoothManagerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       bluetoothManagerButton.topAnchor.constraint(equalTo: volumeListenerButton.bottomAnchor, constant: 16),
     ])
+    
+    view.addSubview(cardCollectionButton)
+    NSLayoutConstraint.activate([
+      cardCollectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      cardCollectionButton.topAnchor.constraint(equalTo: bluetoothManagerButton.bottomAnchor, constant: 16),
+    ])
   }
 
   @objc
@@ -80,6 +95,13 @@ class ViewController: UIViewController {
   func didTapBluetoothManagerButton() {
     let bluetoothVC = BluetoothManagerTestViewController()
     let navController = UINavigationController(rootViewController: bluetoothVC)
+    present(navController, animated: true)
+  }
+  
+  @objc
+  func didTapCardCollectionButton() {
+    let cardVC = CardCollectionTestViewController()
+    let navController = UINavigationController(rootViewController: cardVC)
     present(navController, animated: true)
   }
 }
