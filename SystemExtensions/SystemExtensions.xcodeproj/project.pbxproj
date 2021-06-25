@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		7E849CFD26853D4B009EF220 /* UIFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E849CFC26853D4B009EF220 /* UIFontExt.swift */; };
+		7EE59E4D2685500400EE9F9B /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE59E4C2685500400EE9F9B /* UIImageExt.swift */; };
+		7EE59E4F2685545500EE9F9B /* URLExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE59E4E2685545500EE9F9B /* URLExt.swift */; };
 		7EF8E32D267BF85D00DB1566 /* SystemExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7EF8E337267BF87700DB1566 /* NSAttributedStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF8E336267BF87700DB1566 /* NSAttributedStringExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E849CFC26853D4B009EF220 /* UIFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExt.swift; sourceTree = "<group>"; };
+		7EE59E4C2685500400EE9F9B /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
+		7EE59E4E2685545500EE9F9B /* URLExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExt.swift; sourceTree = "<group>"; };
 		7EF8E328267BF85D00DB1566 /* SystemExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SystemExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemExtensions.h; sourceTree = "<group>"; };
 		7EF8E32C267BF85D00DB1566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 			children = (
 				7EF8E32B267BF85D00DB1566 /* SystemExtensions.h */,
 				7EF8E336267BF87700DB1566 /* NSAttributedStringExt.swift */,
+				7EE59E4C2685500400EE9F9B /* UIImageExt.swift */,
+				7EE59E4E2685545500EE9F9B /* URLExt.swift */,
 				7E849CFC26853D4B009EF220 /* UIFontExt.swift */,
 				7EF8E32C267BF85D00DB1566 /* Info.plist */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				7E849CFD26853D4B009EF220 /* UIFontExt.swift in Sources */,
 				7EF8E337267BF87700DB1566 /* NSAttributedStringExt.swift in Sources */,
+				7EE59E4D2685500400EE9F9B /* UIImageExt.swift in Sources */,
+				7EE59E4F2685545500EE9F9B /* URLExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,6 +74,9 @@ class ViewController: UIViewController {
       cardCollectionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
       cardCollectionButton.topAnchor.constraint(equalTo: bluetoothManagerButton.bottomAnchor, constant: 16),
     ])
+    
+    // Preload stuff
+    CardMedia.preloadImages()
   }
 
   @objc
